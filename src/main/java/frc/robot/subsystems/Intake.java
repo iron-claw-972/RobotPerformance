@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.SupplyCurrentLimitConfiguration;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import lib.drivers.LazyTalonFX;
 import com.revrobotics.Rev2mDistanceSensor;
 import com.revrobotics.Rev2mDistanceSensor.Port;
 import com.revrobotics.Rev2mDistanceSensor.Unit;
@@ -30,7 +30,7 @@ public class Intake extends SubsystemBase {
     INTAKE_CUBE, OUTTAKE_CUBE, OUTTAKE_CUBE_AUTO, INTAKE_CONE, OUTTAKE_CONE, DISABLED, HOLD_GAME_PIECE
   }
 
-  private final WPI_TalonFX m_intakeMotor;
+  private final LazyTalonFX m_intakeMotor;
   private final ShuffleboardTab m_intakeTab;
   // private final Rev2mDistanceSensor m_distSensor;
 

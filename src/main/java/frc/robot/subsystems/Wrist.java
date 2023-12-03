@@ -1,6 +1,6 @@
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import lib.drivers.LazyTalonFX;
 
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.VecBuilder;
@@ -20,7 +20,7 @@ import frc.robot.util.LogManager;
 import frc.robot.util.MotorFactory;
 
 public class Wrist extends SubsystemBase {
-  private final WPI_TalonFX m_motor;
+  private final LazyTalonFX m_motor;
   private final PIDController m_pid;
 
   // unit tests want access to the DutyCycleEncoder and DutyCycleEncoderSim

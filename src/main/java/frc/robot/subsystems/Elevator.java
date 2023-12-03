@@ -6,7 +6,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.SupplyCurrentLimitConfiguration;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import lib.drivers.LazyTalonFX;
 
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -27,7 +27,7 @@ public class Elevator extends SubsystemBase {
   private ElevatorMode m_mode;
   private ElevatorStatus m_status;
 
-  private final WPI_TalonFX m_motor;
+  private final LazyTalonFX m_motor;
   private final DigitalInput m_bottomLimitSwitch;
   private final DigitalInput m_topLimitSwitch;
   private double m_desiredPosition = ElevatorConstants.kPostCalibrationPosition;
@@ -44,7 +44,7 @@ public class Elevator extends SubsystemBase {
     m_status = ElevatorStatus.NONE;
     m_isCalibrated = false;
 
-    m_motor = new WPI_TalonFX(ElevatorConstants.kMotorID, Constants.kCanivoreCAN);
+    m_motor = new LazyTalonFX(ElevatorConstants.kMotorID, Constants.kCanivoreCAN);
     configElevatorMotor();
 
     m_bottomLimitSwitch = new DigitalInput(ElevatorConstants.kBottomLimitSwitchPort);
